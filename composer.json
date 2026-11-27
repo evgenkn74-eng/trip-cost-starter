@@ -1,0 +1,7 @@
+{
+	"require": {
+		"php": "^8.5",
+		"symfony/var-dumper": "^7.4",
+		"filp/whoops": "^2.18"
+	}
+}

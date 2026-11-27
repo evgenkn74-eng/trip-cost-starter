@@ -1,0 +1,5 @@
+data/app.sqlite
+vendor/
+.vs/
+.vscode/
+.my/
