@@ -140,6 +140,7 @@ $(function () {
 	$('#show_billing').on('click', function (event) {
 		event.preventDefault();
 		$message.empty();
+		$message.css('display', 'none');
 		loadPreview($('#filter select[name="month"]').val());
 	});
 
@@ -164,12 +165,14 @@ $(function () {
 					', пересчитано: ' + res.updated +
 					', без изменений: ' + res.unchanged +
 					', пропущено отправленных: ' + res.skipped + '.');
+				$message.css('display', 'block');
 				loadPreview(period);   // показать актуальное состояние после записи
 			})
 			.fail(function (xhr) {
 				var json = xhr.responseJSON || {};
 				var message = (json.errors && json.errors.period) || json.error || 'Не удалось применить пересчёт';
 				$message.text(message);
+				$message.css('display', 'block');
 				$apply.prop('disabled', false);
 			});
 	});

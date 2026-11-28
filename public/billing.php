@@ -6,7 +6,7 @@ $months = db()->query("SELECT DISTINCT substr(departure_date, 1, 7) FROM trips O
 page_header('Счета за месяц');
 ?>
 <h1>Счета за месяц</h1>
-
+<div id="billing_message" class="msg" style="display: none;"></div>
 <form id="filter" class="filter">
     <select name="month">
         <option value="">Все месяцы</option>
@@ -19,7 +19,6 @@ page_header('Счета за месяц');
 </form>
 
 <div id="billing_result"></div>
-<div id="billing_message"></div>
 
 <!-- <h2>Предварительный пересчёт счетов</h2>
 <table class="grid">
